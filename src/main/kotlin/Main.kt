@@ -81,18 +81,20 @@ fun main() {
                 )
 
                 println("entrada de ejercicio#$punto =$mapa")
-                println("respuesta ejercicio#$punto =" +mapa.toList())
-                println()
+//                println("respuesta ejercicio#$punto =" + mapa.toList())
+                println("respuesta ejercicio#$punto =" + mapa.map {
+                    "${it.key} : ${it.value}"
+                })
             }
-
             punto == 11 -> {
-
-//                println("entrada de ejercicio#$punto =$nombres")
-//                println("respuesta ejercicio#$punto ="
+                val palabras = listOf("perro", "gato", "perro", "pájaro", "gato",
+                    "perro")
+                var mapa = palabras.groupingBy{it}.eachCount()
+              println("entrada de ejercicio#$punto =$palabras")
+              println("respuesta ejercicio#$punto ="+mapa)
+                }
             }
         }
 
+        ejercicios(11)
     }
-
-    ejercicios(10)
-}
